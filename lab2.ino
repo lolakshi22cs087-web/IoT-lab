@@ -1,20 +1,17 @@
-int ldr1=0;
-void setup() {
-  // put your setup code here, to run once:
-   pinMode(2,INPUT);
-   pinMode(5,OUTPUT);
-   Serial.begin(9600);
+int buttonState = 1;
+
+void setup()
+{
+  pinMode(9, INPUT);
+  pinMode(3, OUTPUT);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  ldr1=digitalRead(2);
-  Serial.print("Intensity:\n");
-  Serial.print(ldr1);
-  if(ldr1==HIGH){
-   digitalWrite(5,HIGH);
-  }else{
-    digitalWrite(5,LOW);
-   
+void loop()
+{
+  buttonState = digitalRead(9);
+  if (buttonState == 1) {
+    digitalWrite(3, HIGH);
+  } else {
+    digitalWrite(3 , LOW);
   }
 }
